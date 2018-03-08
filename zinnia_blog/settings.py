@@ -25,7 +25,7 @@ SECRET_KEY = 'bj)=s%5_=iem*-4(c$r%4-0400cnne#ry#q9-xanx-8ivpiw0u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['60.205.206.18', 'www.jnzmz.info', 'jnzmz.info']
+ALLOWED_HOSTS = ['60.205.206.18', 'www.jnzmz.info', 'jnzmz.info', '192.168.0.189']
 
 # set static root
 STATIC_ROOT = "/root/zinnia_blog/static/"
@@ -92,8 +92,12 @@ WSGI_APPLICATION = 'zinnia_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysql',
+        'USER' : 'root',
+        'PASSWORD' : 'root',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',  
     }
 }
 
